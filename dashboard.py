@@ -65,8 +65,8 @@ def open_dashboard(id_no):
             edit_window.destroy()
 
         # Save button
-        tk.Button(edit_window, text="Save", command=lambda: (save_name(), update_name_in_treeview())).pack()
-        edit_window.bind("<Return>", lambda event: (save_name(), update_name_in_treeview()))
+        tk.Button(edit_window, text="Save", command=lambda: [save_name(), update_name_in_treeview()]).pack()
+        edit_window.bind("<Return>", lambda: [save_name(), update_name_in_treeview()])
 
     # Edit button
     edit_button = tk.Button(dashboard, text="Edit", command=edit_name)
