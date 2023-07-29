@@ -21,7 +21,18 @@ def login(event=None):
 # Create the main window
 window = tk.Tk()
 window.title("Login")
-window.geometry("300x200")
+window.geometry("800x600+200+50")
+window.resizable(False, False)
+
+#Creating a canvas that will hold everything
+canvas = tk.Canvas(window, width=300, height=200)
+canvas.pack()
+
+bg_image = tk.PhotoImage(file="image.png")
+canvas.create_image(0, 0, anchor=tk.NW, image=bg_image)
+
+#Create a Login canvas
+login_canvas = tk.Canvas(window, width=400, height=400)
 
 # Create the username label and entry
 id_label = tk.Label(window, text="Id number:")
